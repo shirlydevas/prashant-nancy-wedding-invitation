@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #F5F5DC 0%, #FFFFF0 100%);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .wedding-card {
+    @apply bg-wedding-ivory/90 backdrop-blur-sm border border-wedding-gold/20 shadow-2xl;
+  }
+  
+  .wedding-button {
+    @apply bg-wedding-gold text-wedding-navy px-8 py-3 rounded-full font-medium transition-all duration-300 hover:bg-wedding-gold/80 hover:scale-105 hover:shadow-lg;
+  }
+  
+  .wedding-text {
+    @apply text-wedding-navy;
+  }
+  
+  .wedding-accent {
+    @apply text-wedding-gold;
+  }
+  
+  .floating-element {
+    @apply animate-float;
+  }
+  
+  .fade-in-up {
+    @apply animate-fadeInUp;
+  }
+  
+  .slide-in-left {
+    @apply animate-slideInLeft;
+  }
+  
+  .slide-in-right {
+    @apply animate-slideInRight;
+  }
+  
+  .pulse-glow {
+    @apply animate-pulse-glow;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F5DC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B8941F;
+}
+
+/* Particle effects */
+.particle {
+  position: absolute;
+  background: #D4AF37;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particle-float 8s linear infinite;
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
